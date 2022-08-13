@@ -1,5 +1,5 @@
 # Perintah Koneksi ke MySQL dengan host localhost, user root, dan password "kosong"
-mysql -u root -p
+mysql -h localhost -u root -p
 
 # Perintah Membuat Database "db_mhs"
 CREATE DATABASE db_mhs;
