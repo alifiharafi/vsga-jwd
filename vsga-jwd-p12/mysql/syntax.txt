@@ -1,0 +1,37 @@
+# Perintah Koneksi ke MySQL dengan host localhost, user root, dan password "kosong"
+mysql -u root -p
+
+# Perintah Membuat Database "db_mhs"
+CREATE DATABASE db_mhs;
+
+# Menggunakan Database "db_mhs"
+USE db_mhs;
+
+# Membuat Tabel mahasiswa
+CREATE TABLE mahasiswa (
+	id_mhs int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nim varchar(13) NOT NULL,
+	nama varchar(40) NOT NULL,
+	jenis_kelamin enum('L', 'P') NOT NULL,
+	jurusan varchar(30) NOT NULL,
+	alamat text NOT NULL
+); 
+
+# Mengisi nilai pada Tabel mahasiswa
+INSERT INTO mahasiswa VALUES (
+	1,
+	'TI10203040'
+	'Farida',
+	'P',
+	'Informatika',
+	'Bali'
+);
+
+# Mengisi nilai pada Tabel tanpa id_mhs (auto increment)
+INSERT INTO mahasiswa VALUES (
+	'TI10203041'
+	'Djoko',
+	'L',
+	'Informatika',
+	'Yogyakarta'
+);
