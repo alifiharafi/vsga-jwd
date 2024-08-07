@@ -1,0 +1,49 @@
+# Buka Command Prompt
+Tombol Windows + R, ketik "cmd", tekan tombol enter.
+
+# Change Directory ke Folder XAMPP-MySQL. Contoh pada Drive C.
+cd\
+cd C:\xampp\mysql\bin 
+
+# Connect ke Database
+mysql -u root -p
+(langsung enter karena secara default tidak menggunakan password)
+
+# Membuat Database Baru db_mhs
+CREATE DATABASE db_mhs;
+
+# Menggunakan Database db_mhs
+USE db_mhs;
+
+# Membuat Tabel mahasiswa pada Database db_mhs
+CREATE TABLE mahasiswa (
+    nim varchar(13) NOT NULL,
+    id_mhs int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nama varchar(40) NOT NULL,
+    jenis_kelamin enum('P', 'L') NOT NULL,
+    jurusan varchar(30) NOT NULL,
+    alamat text NOT NULL
+);
+
+# Memeriksa Tabel yang sudah dibuat
+DESC mahasiswa;
+
+# Menambahkan data mahasiswa baru ke tabel mahasiswa
+INSERT INTO mahasiswa VALUES ('TI102132', 1, 'Komang', 'L', 'Sistem Informasi', 'Depok');
+INSERT INTO mahasiswa VALUES ('TI102133', 2, 'Komeng', 'P', 'Teknik Informatika', 'Cimahi');
+INSERT INTO mahasiswa VALUES ('TI102134', 3, 'Kumang', 'L', 'Teknik Kimia', 'Bandung');
+
+# Menampilkan seluruh data pada tabel mahasiswa
+SELECT * FROM mahasiswa;
+
+# Contoh menampilkan data hanya satu mahasiswa berdasarkan id_mhs = 3
+SELECT * FROM mahasiswa WHERE id_mhs = 3;
+
+# Contoh menghapuskan data hanya satu mahasiswa berdasarkan id_mhs = 3
+DELETE FROM mahasiswa WHERE id_mhs = 3;
+
+# Menambahkan kembali data mahasiswa dengan id_mhs = 3
+INSERT INTO mahasiswa VALUES ('TI102134', 3, 'Kumang', 'L', 'Teknik Kimia', 'Bandung');
+
+# Menampilkan kembali seluruh data pada tabel mahasiswa
+SELECT * FROM mahasiswa;
