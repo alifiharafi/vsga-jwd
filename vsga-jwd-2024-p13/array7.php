@@ -14,6 +14,18 @@
     echo '</pre>';
     echo "<hr>";
 
+    $random = array(
+        "Burung",
+        120,
+        1.5,
+        true,
+        array('Buaya')
+    );
+
+    echo '<pre>';
+    echo var_dump($random);
+    echo '</pre>';
+    echo "<hr>";
 
     // Menghapus Kucing melalui indeks elemen array
     unset($hewan[1]);
@@ -36,14 +48,14 @@
     echo "<hr>";
 
     // Dalam hal ini fungsi count() untuk menghitung jumlah elemen di dalam array.
-    foreach($barang as $b) {
-        echo $b . "<br>";
+    foreach($hewan as $h) {
+        echo $h . "<br>";
     }
     echo "<hr>";
 
     $i = 0;
-    while($i < count($barang)) {
-        echo $barang[$i] . "<br>";
+    while($i < count($hewan)) {
+        echo $hewan[$i] . "<br>";
         $i++;
     }
 
